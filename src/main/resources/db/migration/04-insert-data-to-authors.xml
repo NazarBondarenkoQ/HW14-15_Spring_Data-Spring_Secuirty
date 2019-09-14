@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="4" author="nazar_bondarenko">
+        <insert tableName="authors">
+            <column name="age">51</column>
+            <column name="country">USA</column>
+            <column name="first_name">Joshua</column>
+            <column name="last_name">Bloch</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="age">70</column>
+            <column name="country">England</column>
+            <column name="first_name">George</column>
+            <column name="last_name">Orwell</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="age">57</column>
+            <column name="country">USA</column>
+            <column name="first_name">Chuck</column>
+            <column name="last_name">Palahniuk</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="age">40</column>
+            <column name="country">USA</column>
+            <column name="first_name">Edgar</column>
+            <column name="last_name">Poe</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="age">47</column>
+            <column name="country">USA</column>
+            <column name="first_name">Howard</column>
+            <column name="last_name">Lovecraft</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="age">71</column>
+            <column name="country">USA</column>
+            <column name="first_name">Stephen</column>
+            <column name="last_name">King</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="age">46</column>
+            <column name="country">Ireland</column>
+            <column name="first_name">Oscar</column>
+            <column name="last_name">Wilde</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="age">75</column>
+            <column name="country">France</column>
+            <column name="first_name">Jules</column>
+            <column name="last_name">Werne</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="age">49</column>
+            <column name="country">USA</column>
+            <column name="first_name">Douglas</column>
+            <column name="last_name">Adams</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="age">85</column>
+            <column name="country">USA</column>
+            <column name="first_name">Kurt</column>
+            <column name="last_name">Vonnegut</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

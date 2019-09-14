@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="5" author="nazar_bondarenko">
+        <insert tableName="books">
+            <column name="description">The Definitive Guide to Java Platform Best Practices–Updated for Java 7, 8, and 9.
+            </column>
+            <column name="genre">Education</column>
+            <column name="rate">10</column>
+            <column name="title">Effective Java</column>
+            <column name="author_id">1</column>
+        </insert>
+        <insert tableName="books">
+            <column name="description">Ignorance is strength.
+            </column>
+            <column name="genre">Novel</column>
+            <column name="rate">10</column>
+            <column name="title">1984</column>
+            <column name="author_id">2</column>
+        </insert>
+        <insert tableName="books">
+            <column name="description">A depressed man suffering from
+                insomnia meets a strange soap salesman named Tyler Durden
+                and soon finds himself living in his squalid house after his perfect apartment is destroyed.</column>
+            <column name="genre">Novel</column>
+            <column name="rate">10</column>
+            <column name="title">Fight Club</column>
+            <column name="author_id">3</column>
+        </insert>
+        <insert tableName="books">
+            <column name="description">Horror story.</column>
+            <column name="genre">Horror</column>
+            <column name="rate">10</column>
+            <column name="title">The black cat</column>
+            <column name="author_id">4</column>
+        </insert>
+        <insert tableName="books">
+            <column name="description">A monster of vaguely anthropoid outline,
+                but with an octopus-like head whose face was a mass of feelers, a scaly,
+                rubbery-looking body, prodigious claws on hind and fore feet, and long, narrow wings behind,
+                waits for his awakening.</column>
+            <column name="genre">Horror</column>
+            <column name="rate">9</column>
+            <column name="title">Call of Cthulhu</column>
+            <column name="author_id">5</column>
+        </insert>
+        <insert tableName="books">
+            <column name="description">Ancient evil eats souls of children</column>
+            <column name="genre">Horror</column>
+            <column name="rate">9</column>
+            <column name="title">It</column>
+            <column name="author_id">6</column>
+        </insert>
+        <insert tableName="books">
+            <column name="description">The Picture of Dorian Gray is about a young man
+                named Dorian Gray who has a portrait painted of himself.</column>
+            <column name="genre">Novel</column>
+            <column name="rate">7</column>
+            <column name="title">The Picture of Dorian Gray</column>
+            <column name="author_id">7</column>
+        </insert>
+        <insert tableName="books">
+            <column name="description">Adventure story.</column>
+            <column name="genre">Novel</column>
+            <column name="rate">8</column>
+            <column name="title">Around the world in eighty days</column>
+            <column name="author_id">8</column>
+        </insert>
+        <insert tableName="books">
+            <column name="description"> All is 42.</column>
+            <column name="genre">Fiction</column>
+            <column name="rate">10</column>
+            <column name="title">Hitchhiker's guide to the galaxy</column>
+            <column name="author_id">9</column>
+        </insert>
+        <insert tableName="books">
+            <column name="description">A war story.</column>
+            <column name="genre">Novel</column>
+            <column name="rate">6</column>
+            <column name="title">Slaughterhouse-Five</column>
+            <column name="author_id">10</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
