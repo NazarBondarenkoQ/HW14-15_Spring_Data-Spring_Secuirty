@@ -1,29 +1,33 @@
 package edu.cursor.springsecurity.controller;
 
 import edu.cursor.springsecurity.models.Book;
-import edu.cursor.springsecurity.service.IBookService;
-import lombok.AllArgsConstructor;
+import edu.cursor.springsecurity.service.BookService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BookController {
 
-    private IBookService IBookService;
+    private final BookService BookService;
 
-    @PostMapping("/admin/add_book")
+    @Secured("ADMIN")
+    @PostMapping("/admin/add/book")
     public void saveBook(@RequestBody Book book) {
-        IBookService.saveBook(book);
+        BookService.saveBook(book);
     }
 
-    @GetMapping("/user/find_book/{bookID}")
-    public Book findBook(@PathVariable("bookID") Integer authorID) {
-        return IBookService.findBook(authorID);
+    @Secured({"USER", "ADMIN"})
+    @GetMapping("/user/find/book/{id}")
+    public Book findBook(@PathVariable("id") Integer authorID) {
+        return BookService.findBook(authorID);
     }
 
-    @DeleteMapping("/admin/delete_book/{bookID}")
-    public void deleteBook(@PathVariable("bookID") Integer authorID) {
-        IBookService.deleteBook(authorID);
+    @Secured("ADMIN")
+    @DeleteMapping("/admin/delete/book/{id}")
+    public void deleteBook(@PathVariable("id") Integer authorID) {
+        BookService.deleteBook(authorID);
     }
 
 }

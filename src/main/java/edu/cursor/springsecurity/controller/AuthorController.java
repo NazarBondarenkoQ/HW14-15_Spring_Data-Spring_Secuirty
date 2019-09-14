@@ -1,31 +1,32 @@
 package edu.cursor.springsecurity.controller;
 
 import edu.cursor.springsecurity.models.Author;
-import edu.cursor.springsecurity.service.IAuthorService;
+import edu.cursor.springsecurity.service.AuthorService;
 import lombok.AllArgsConstructor;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
 public class AuthorController {
 
-    private IAuthorService IAuthorService;
+    private AuthorService AuthorService;
 
-    @PostMapping("/admin/add_author")
+    @Secured("ADMIN")
+    @PostMapping("add/author")
     public void saveAuthor(@RequestBody Author author) {
-        IAuthorService.saveAuthor(author);
+        AuthorService.saveAuthor(author);
     }
 
-    @GetMapping("/user/find_author/{authorID}")
-    public Optional<Author> findAuthor(@PathVariable("authorID") Integer authorID) {
-        return IAuthorService.findAuthor(authorID);
+    @Secured({"USER", "ADMIN"})
+    @GetMapping("find/author/{id}")
+    public Author findAuthor(@PathVariable("id") Integer authorID) {
+        return AuthorService.findAuthor(authorID);
     }
-
-    @DeleteMapping("/admin/delete_author/{authorID}")
-    public void deleteAuthor(@PathVariable("authorID") Integer authorID) {
-        IAuthorService.deleteAuthor(authorID);
+    @Secured("ADMIN")
+    @DeleteMapping("delete/author/{id}")
+    public void deleteAuthor(@PathVariable("id") Integer authorID) {
+        AuthorService.deleteAuthor(authorID);
     }
 
 }
